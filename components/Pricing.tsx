@@ -1,0 +1,80 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Check, ArrowRight, Zap, Shield } from 'lucide-react';
+
+const Pricing = () => {
+  return (
+    <section id="pricing" className="py-24 px-6 relative overflow-hidden bg-brand-dark">
+        {/* Background Gradients */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-brand-blue/5 blur-[100px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-12">
+            <h2 className="font-serif text-5xl md:text-6xl text-white mb-6">
+                Single Tier. <span className="italic text-gray-500">Maximum Impact.</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                No up-sells. No hidden fees. Just complete access to the entire Data Engineering workshop ecosystem.
+            </p>
+        </div>
+
+        <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card border border-brand-blue/30 rounded-3xl p-2 max-w-lg mx-auto shadow-[0_0_50px_rgba(59,130,246,0.15)]"
+        >
+            <div className="bg-[#080808] rounded-[1.25rem] p-8 md:p-12 relative overflow-hidden">
+                {/* Top Label */}
+                <div className="absolute top-0 right-0 bg-brand-blue text-white text-[10px] font-bold px-4 py-2 rounded-bl-xl uppercase tracking-widest">
+                    Cohort Limited Spots
+                </div>
+
+                <div className="mb-8">
+                    <span className="text-gray-400 text-sm font-medium uppercase tracking-wider">Total Access Pass</span>
+                    <div className="flex items-baseline gap-2 mt-2">
+                        <span className="text-5xl md:text-6xl font-serif text-white">$499</span>
+                        <span className="text-gray-500 font-mono text-sm">/ one-time</span>
+                    </div>
+                    <p className="text-gray-500 text-sm mt-4 leading-relaxed">
+                        Join the December 13th Cohort. Secure your spot before they sell out.
+                    </p>
+                </div>
+
+                <div className="space-y-4 mb-10">
+                    <PricingItem text="3-Week Intensive Live Curriculum" />
+                    <PricingItem text="Senior Engineer Code Reviews" />
+                    <PricingItem text="3 Production Portfolio Projects" />
+                    <PricingItem text="Resume & Interview Prep Guide" />
+                    <PricingItem text="Private Community Access" />
+                    <PricingItem text="Lifetime Recording Access" />
+                </div>
+
+                <a 
+                    href="https://datadrooler.com/register/"
+                    className="block w-full py-4 bg-brand-blue hover:bg-blue-600 text-white text-center rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-brand-blue/25 mb-4"
+                >
+                    Secure Your Spot
+                </a>
+                
+                <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
+                    <Shield size={12} />
+                    <span>Secure Payment via Stripe</span>
+                </div>
+            </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const PricingItem = ({ text }: { text: string }) => (
+    <div className="flex items-start gap-3">
+        <div className="p-1 rounded-full bg-brand-cyan/10 mt-0.5">
+            <Check size={14} className="text-brand-cyan" />
+        </div>
+        <span className="text-gray-300 text-sm">{text}</span>
+    </div>
+);
+
+export default Pricing;
