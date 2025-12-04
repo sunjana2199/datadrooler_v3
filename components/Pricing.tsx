@@ -27,14 +27,17 @@ const Pricing = () => {
             <div className="bg-[#080808] rounded-[1.25rem] p-8 md:p-12 relative overflow-hidden">
                 {/* Top Label */}
                 <div className="absolute top-0 right-0 bg-brand-blue text-white text-[10px] font-bold px-4 py-2 rounded-bl-xl uppercase tracking-widest">
-                    Cohort Limited Spots
+                    Early Bird Spots
                 </div>
 
                 <div className="mb-8">
                     <span className="text-gray-400 text-sm font-medium uppercase tracking-wider">Total Access Pass</span>
-                    <div className="flex items-baseline gap-2 mt-2">
-                        <span className="text-5xl md:text-6xl font-serif text-white">$499</span>
-                        <span className="text-gray-500 font-mono text-sm">/ one-time</span>
+                    <div className="flex flex-col mt-2">
+                        <span className="text-6xl md:text-7xl text-brand-blue line-through">$1599</span>
+                        <div className="flex items-baseline gap-2">
+                            <span className="text-4xl md:text-5xl text-white font-bold">$499</span>
+                            <span className="text-gray-500 font-mono text-sm">/ one-time</span>
+                        </div>
                     </div>
                     <p className="text-gray-500 text-sm mt-4 leading-relaxed">
                         Join the December 13th Cohort. Secure your spot before they sell out.
@@ -42,12 +45,15 @@ const Pricing = () => {
                 </div>
 
                 <div className="space-y-4 mb-10">
-                    <PricingItem text="3-Week Intensive Live Curriculum" />
-                    <PricingItem text="Senior Engineer Code Reviews" />
-                    <PricingItem text="3 Production Portfolio Projects" />
-                    <PricingItem text="Resume & Interview Prep Guide" />
+                    <div className="text-gray-200 font-semibold text-base mb-2 -mt-2">What You'll Get</div>
+                    <PricingItem text="3-Week Hands-On Curriculum" />
+                    <PricingItem text="3 Production-Ready Portfolio Projects" />
+                    <PricingItem text="Data Engineering Roadmap" />
+                    <PricingItem text="Personalized 1:1 Mentorship" />
+                    <PricingItem text="24/7 project support" />
+                    <div className="text-gray-200 font-semibold text-base mb-2 mt-6">Additional Benefits</div>
                     <PricingItem text="Private Community Access" />
-                    <PricingItem text="Lifetime Recording Access" />
+                    <PricingItem text="Lifetime Recordings" />
                 </div>
 
                 <a 
@@ -57,9 +63,12 @@ const Pricing = () => {
                     Secure Your Spot
                 </a>
                 
-                <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
-                    <Shield size={12} />
-                    <span>Secure Payment via Stripe</span>
+                <div className="flex flex-col items-center gap-1">
+                    <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
+                        <Shield size={12} />
+                        <span>7 days money back guarantee</span>
+                    </div>
+                    <span className="text-[10px] text-gray-500">(*excluding transaction fee)</span>
                 </div>
             </div>
         </motion.div>

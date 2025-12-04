@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,21 +26,30 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-blue to-brand-cyan flex items-center justify-center">
-            <span className="font-serif italic font-bold text-black text-lg">D</span>
-          </div>
+        <Link to="/" className="flex items-center gap-2">
+          {logoError ? (
+            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-blue to-brand-cyan flex items-center justify-center">
+              <span className="font-serif italic font-bold text-black text-lg">D</span>
+            </div>
+          ) : (
+            <img 
+              src="/images/ddlogo.png" 
+              alt="DataDrooler Logo" 
+              className="w-12 h-12 object-contain"
+              style={{ mixBlendMode: 'normal', backgroundColor: 'transparent' }}
+              onError={() => setLogoError(true)}
+            />
+          )}
           <span className="font-sans font-semibold text-xl tracking-tight">
             Data<span className="text-gray-400">Drooler</span>
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Protocol</a>
-          <a href="#comparison" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Compare</a>
-          <a href="#agenda" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Manifest</a>
-          <a href="#pricing" className="text-sm font-medium text-brand-cyan hover:text-white transition-colors">Pricing</a>
+          <Link to="/" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Home</Link>
+          <a href="/#instructor" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="/#agenda" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Projects</a>
         </div>
 
         {/* CTA */}
@@ -49,7 +60,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="group relative px-6 py-2 rounded-full bg-white text-black font-semibold text-sm hover:bg-gray-100 transition-colors flex items-center gap-2"
           >
-            Start Engine
+            Register
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
@@ -73,11 +84,10 @@ const Navbar = () => {
             className="md:hidden bg-brand-dark border-b border-white/10 overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
-              <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-gray-300">Protocol</a>
-              <a href="#comparison" onClick={() => setMobileMenuOpen(false)} className="text-gray-300">Compare</a>
-              <a href="#agenda" onClick={() => setMobileMenuOpen(false)} className="text-gray-300">Manifest</a>
-              <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-brand-cyan">Pricing</a>
-              <a href="https://datadrooler.com/register/" className="text-white">Register Now</a>
+              <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-300">Home</Link>
+              <a href="/#instructor" onClick={() => setMobileMenuOpen(false)} className="text-gray-300">About</a>
+              <a href="/#agenda" onClick={() => setMobileMenuOpen(false)} className="text-gray-300">Projects</a>
+              <a href="https://datadrooler.com/register/" onClick={() => setMobileMenuOpen(false)} className="text-white">Register</a>
             </div>
           </motion.div>
         )}

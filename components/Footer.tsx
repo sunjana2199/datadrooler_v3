@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
@@ -30,10 +31,10 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-gray-500 font-mono uppercase tracking-wider">
-            <p>&copy; 2025 DataDrooler. All Systems Nominal.</p>
+            <p>&copy; 2025 DataDrooler.com All Rights Reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white transition-colors">Privacy Protocol</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                <Link to="/privacy-protocol" className="hover:text-white transition-colors">Privacy Protocol</Link>
+                <Link to="/terms-of-service" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Terms of Service</Link>
             </div>
         </div>
       </div>

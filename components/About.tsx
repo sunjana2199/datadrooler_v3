@@ -17,7 +17,7 @@ const Instructor = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 to-transparent rounded-2xl blur-2xl" />
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
                     <img 
-                        src="https://datadrooler.com/wp-content/uploads/2024/09/A7400295-22-1024x1024.jpg" 
+                        src="/images/instructor-photo.jpg" 
                         alt="Sunjana Ramana" 
                         className="w-full h-full object-cover"
                     />
@@ -52,7 +52,7 @@ const Instructor = () => {
                     <SocialLink href="https://www.linkedin.com/in/sunjana-ramana/" icon={<Linkedin />} />
                     <SocialLink href="https://youtube.com/@sunjanaindata?si=J_w90D2e0Br0wWRi" icon={<Youtube />} />
                     <SocialLink href="https://www.instagram.com/sunjana.py/" icon={<Instagram />} />
-                    <SocialLink href="mailto:sunjana.rc@gmail.com" icon={<Mail />} />
+                    <SocialLink href="mailto:hi@datadrooler.com" icon={<Mail />} />
                 </div>
             </div>
         </div>

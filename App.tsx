@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
@@ -9,9 +10,11 @@ import Pricing from './components/Pricing';
 import Instructor from './components/Instructor';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import PrivacyProtocol from './components/PrivacyProtocol';
+import TermsOfService from './components/TermsOfService';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
-export default function App() {
+function HomePage() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -89,5 +92,19 @@ export default function App() {
         <Footer />
       </div>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy-protocol" element={<PrivacyProtocol />} />
+        <Route path="/privacy" element={<PrivacyProtocol />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
