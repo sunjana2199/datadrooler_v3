@@ -182,7 +182,7 @@ const Agenda = () => {
         
         {/* CTA */}
         <div className="mt-20 flex justify-center">
-             <a href="https://datadrooler.com/register/" className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-sm tracking-wide hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]">
+             <a href="/pricing" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-sm tracking-wide hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]">
                 <Terminal size={18} />
                 INITIALIZE LEARNING SEQUENCE
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

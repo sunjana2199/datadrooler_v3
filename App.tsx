@@ -12,6 +12,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PrivacyProtocol from './components/PrivacyProtocol';
 import TermsOfService from './components/TermsOfService';
+import PricingPage from './components/PricingPage';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 function HomePage() {
@@ -100,6 +101,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/privacy-protocol" element={<PrivacyProtocol />} />
         <Route path="/privacy" element={<PrivacyProtocol />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -22,7 +22,7 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-6 tracking-tight">
+          <h1 className="font-serif text-4xl md:text-7xl lg:text-8xl leading-[1.1] mb-6 tracking-tight">
             Escape Tutorial Hell. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-blue italic pr-2">
               Become a Data Engineer
@@ -37,7 +37,7 @@ const Hero = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <a
-              href="https://datadrooler.com/register/"
+              href="/pricing"
               className="group relative px-8 py-4 bg-brand-blue hover:bg-blue-600 text-white rounded-full font-semibold transition-all shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_40px_rgba(59,130,246,0.7)] flex items-center gap-2 w-full sm:w-auto justify-center overflow-hidden"
             >
               {/* Light Beam Effect */}
@@ -49,11 +49,12 @@ const Hero = () => {
               </span>
             </a>
             <a
-              href="#agenda"
+              href="https://cal.com/sunjana/15min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 glass-card hover:bg-white/5 text-gray-300 rounded-full font-medium transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
-              <Terminal size={18} />
-              Review Syllabus
+              Book an Info call
             </a>
           </div>
         </motion.div>

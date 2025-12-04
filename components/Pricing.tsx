@@ -4,7 +4,7 @@ import { Check, ArrowRight, Zap, Shield } from 'lucide-react';
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 px-6 relative overflow-hidden bg-brand-dark">
+    <section id="home-pricing" className="py-24 px-6 relative overflow-hidden bg-brand-dark">
         {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-brand-blue/5 blur-[100px] pointer-events-none" />
 
@@ -33,15 +33,12 @@ const Pricing = () => {
                 <div className="mb-8">
                     <span className="text-gray-400 text-sm font-medium uppercase tracking-wider">Total Access Pass</span>
                     <div className="flex flex-col mt-2">
-                        <span className="text-6xl md:text-7xl text-brand-blue line-through">$1599</span>
+                        <span className="text-5xl md:text-6xl text-brand-blue line-through">$1999</span>
                         <div className="flex items-baseline gap-2">
-                            <span className="text-4xl md:text-5xl text-white font-bold">$499</span>
+                            <span className="text-4xl md:text-5xl text-white font-bold">$599</span>
                             <span className="text-gray-500 font-mono text-sm">/ one-time</span>
                         </div>
                     </div>
-                    <p className="text-gray-500 text-sm mt-4 leading-relaxed">
-                        Join the December 13th Cohort. Secure your spot before they sell out.
-                    </p>
                 </div>
 
                 <div className="space-y-4 mb-10">
@@ -57,10 +54,19 @@ const Pricing = () => {
                 </div>
 
                 <a 
-                    href="https://datadrooler.com/register/"
+                    href="/pricing"
                     className="block w-full py-4 bg-brand-blue hover:bg-blue-600 text-white text-center rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-brand-blue/25 mb-4"
                 >
                     Secure Your Spot
+                </a>
+                
+                <a 
+                    href="https://cal.com/sunjana/15min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full py-4 glass-card hover:bg-white/5 text-gray-300 text-center rounded-xl font-medium text-lg transition-colors mb-4"
+                >
+                    Book an Info call
                 </a>
                 
                 <div className="flex flex-col items-center gap-1">
