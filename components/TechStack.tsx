@@ -62,7 +62,7 @@ const TechStack = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="font-mono text-brand-cyan text-xs tracking-[0.2em] uppercase mb-4 block">
-            Modern Stack
+            Tech Stack
           </span>
           <h2 className="font-serif text-4xl md:text-5xl text-white">
             We don't teach outdated tools. <br />

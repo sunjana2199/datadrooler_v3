@@ -30,11 +30,25 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-gray-500 font-mono uppercase tracking-wider">
-            <p>&copy; 2025 DataDrooler.com All Rights Reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-                <Link to="/privacy-protocol" className="hover:text-white transition-colors">Privacy Protocol</Link>
-                <Link to="/terms-of-service" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Terms of Service</Link>
+        <div className="pt-8 border-t border-white/10">
+            <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-mono uppercase tracking-wider gap-4">
+                <p>&copy; 2025 DataDrooler.com All Rights Reserved.</p>
+                {/* Logo */}
+                <Link 
+                    to="/" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="flex justify-center cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                    <img 
+                        src="/images/ddlogo.png" 
+                        alt="DataDrooler Logo" 
+                        className="w-16 h-16 object-contain"
+                    />
+                </Link>
+                <div className="flex gap-6">
+                    <Link to="/privacy-protocol" className="hover:text-white transition-colors">Privacy Protocol</Link>
+                    <Link to="/terms-of-service" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Terms of Service</Link>
+                </div>
             </div>
         </div>
       </div>
