@@ -17,14 +17,14 @@ const features = [
   },
   {
     icon: <Cpu size={24} />,
-    title: "Live Execution",
-    desc: "No pre-recorded fluff. Join live sessions, debug real errors, and understand the 'why' behind architectural decisions, not just the 'how'.",
+    title: "Hands-On Execution",
+    desc: "Work through real pipelines, debug issues, and understand architectural decisions by building projects step by step.",
     delay: 0.2
   },
   {
     icon: <ShieldCheck size={24} />,
-    title: "Code Reviews",
-    desc: "Stop coding in a vacuum. Get your logic challenged and your code reviewed by a Senior Data Engineer. This is how you grow.",
+    title: "Guided Feedback",
+    desc: "Receive actionable feedback on your code and projects from experienced Data Engineers, helping you improve your logic, approach, and confidence.",
     delay: 0.3
   }
 ];

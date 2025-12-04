@@ -23,7 +23,7 @@ const Instructor = () => {
                     />
                     <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
                         <h3 className="font-serif text-2xl text-white">Sunjana Ramana</h3>
-                        <p className="font-mono text-brand-cyan text-xs tracking-widest uppercase">Lead Data Engineer // Instructor</p>
+                        <p className="font-mono text-brand-cyan text-xs tracking-widest uppercase">Data & AI Engineer // Instructor</p>
                     </div>
                 </div>
             </motion.div>

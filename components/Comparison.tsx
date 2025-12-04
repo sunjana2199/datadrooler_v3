@@ -3,12 +3,11 @@ import { motion } from 'framer-motion';
 import { Check, X, Minus } from 'lucide-react';
 
 const comparisonData = [
-  { feature: "Live Project Building", us: true, bootcamp: true, course: false },
-  { feature: "Senior Code Reviews", us: true, bootcamp: "Varies", course: false },
-  { feature: "Production Cloud (AWS/Azure)", us: true, bootcamp: "Simulated", course: false },
-  { feature: "Portfolio Assets", us: "3 Enterprise Projects", bootcamp: "1-2 Projects", course: "Hello World" },
-  { feature: "Time to Completion", us: "3 Weeks", bootcamp: "6 Months", course: "Never" },
-  { feature: "Investment", us: "$499", bootcamp: "$12,000+", course: "$20" },
+  { feature: "Project Building", us: true, bootcamp: false, course: false },
+  { feature: "Production Cloud (AWS/Azure)", us: true, bootcamp: "Local", course: false },
+  { feature: "Portfolio Assets", us: "3 Enterprise Projects", bootcamp: "Theory", course: "Theory" },
+  { feature: "Time to Completion", us: "3 Weeks", bootcamp: "6-12 Months", course: "Never" },
+  { feature: "Investment", us: "$499", bootcamp: "$12,000+", course: "$$$" },
 ];
 
 const Comparison = () => {

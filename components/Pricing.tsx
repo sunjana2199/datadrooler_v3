@@ -11,10 +11,10 @@ const Pricing = () => {
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-12">
             <h2 className="font-serif text-5xl md:text-6xl text-white mb-6">
-                Single Tier. <span className="italic text-gray-500">Maximum Impact.</span>
+               Invest in Your Future <span className="italic text-gray-500"></span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                No up-sells. No hidden fees. Just complete access to the entire Data Engineering workshop ecosystem.
+           Secure your spot in the next cohort. Prices increase soon. <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+               
             </p>
         </div>
 
