@@ -93,7 +93,7 @@ const PricingPage = () => {
                   </p>
 
                   <a 
-                    href="https://archive.datadrooler.com/checkouts/join/"
+                    href="https://archive.datadrooler.com/checkouts/join/?coupon=limited599"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-4 bg-brand-blue hover:bg-blue-600 text-white text-center rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-brand-blue/25 mb-4"
@@ -168,7 +168,7 @@ const PricingPage = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
-                    href="https://archive.datadrooler.com/checkouts/join/"
+                    href="https://archive.datadrooler.com/checkouts/join/?coupon=limited599"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-8 py-4 bg-brand-blue hover:bg-blue-600 text-white rounded-full font-semibold transition-all shadow-lg hover:shadow-brand-blue/25"
