@@ -18,7 +18,7 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
             </span>
-            <span className="text-xs font-mono text-brand-cyan tracking-wider uppercase">Cohort Dec 13 // Limited Spots</span>
+            <span className="text-xs font-mono text-brand-cyan tracking-wider uppercase">Cohort Jan 16 // Limited Spots</span>
           </div>
 
           {/* Main Heading */}
