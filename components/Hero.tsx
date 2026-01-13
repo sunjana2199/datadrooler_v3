@@ -1,8 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  const [cohortDate, setCohortDate] = useState<{ month: string; day: number; year: number }>({ month: 'Jan', day: 23, year: 2026 });
+
+  useEffect(() => {
+    const calculateNextCohortDate = () => {
+      const now = new Date();
+      const currentYear = 2026; // Fixed to 2026
+      
+      // Check if it's a leap year for February
+      const isLeapYear = (year: number) => (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+      const febDays = isLeapYear(currentYear) ? 29 : 28;
+      
+      const jan23 = new Date(currentYear, 0, 23); // January 23, 2026 (month is 0-indexed)
+      const endOfFeb = new Date(currentYear, 1, febDays); // Last day of February 2026
+
+      // If we're before or on Jan 23, show Jan 23
+      if (now <= jan23) {
+        setCohortDate({ month: 'Jan', day: 23, year: currentYear });
+        return;
+      }
+
+      // If we're past the end of February, show the last Friday of February
+      if (now > endOfFeb) {
+        // Find last Friday of February
+        const lastDayOfFeb = new Date(currentYear, 1, febDays);
+        let lastFriday = new Date(lastDayOfFeb);
+        while (lastFriday.getDay() !== 5) { // 5 = Friday
+          lastFriday.setDate(lastFriday.getDate() - 1);
+        }
+        setCohortDate({ month: 'Feb', day: lastFriday.getDate(), year: currentYear });
+        return;
+      }
+
+      // Calculate next Friday after Jan 23
+      let nextFriday = new Date(jan23);
+      nextFriday.setDate(nextFriday.getDate() + 1); // Start from Jan 24
+
+      // Find the next Friday
+      while (nextFriday.getDay() !== 5) { // 5 = Friday
+        nextFriday.setDate(nextFriday.getDate() + 1);
+      }
+
+      // If we've passed this Friday, find the next one
+      while (nextFriday <= now) {
+        nextFriday.setDate(nextFriday.getDate() + 7); // Add a week
+      }
+
+      // Make sure we don't go past end of February
+      if (nextFriday > endOfFeb) {
+        // Find last Friday of February
+        let lastFriday = new Date(endOfFeb);
+        while (lastFriday.getDay() !== 5) {
+          lastFriday.setDate(lastFriday.getDate() - 1);
+        }
+        setCohortDate({ month: 'Feb', day: lastFriday.getDate(), year: currentYear });
+      } else {
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        setCohortDate({ month: monthNames[nextFriday.getMonth()], day: nextFriday.getDate(), year: currentYear });
+      }
+    };
+
+    calculateNextCohortDate();
+    // Update daily to ensure the date changes when needed
+    const interval = setInterval(calculateNextCohortDate, 1000 * 60 * 60); // Check every hour
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -18,7 +84,7 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
             </span>
-            <span className="text-xs font-mono text-brand-cyan tracking-wider uppercase">Cohort Jan 16 // Limited Spots</span>
+            <span className="text-xs font-mono text-brand-cyan tracking-wider uppercase">Cohort {cohortDate.month} {cohortDate.day} // Limited Spots</span>
           </div>
 
           {/* Main Heading */}
@@ -57,6 +123,11 @@ const Hero = () => {
               Book an Info call
             </a>
           </div>
+          
+          {/* Cohort Date */}
+          <p className="text-gray-400 text-sm mt-4 font-mono">
+            Next Cohort Starting {cohortDate.month} {cohortDate.day}, {cohortDate.year}
+          </p>
         </motion.div>
 
         {/* Decorative Graphic Elements */}
